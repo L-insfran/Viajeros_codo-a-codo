@@ -1,6 +1,9 @@
+/*Barra desplegable*/ 
+
 document.getElementById("menu-toggle").addEventListener("click", function() {
     document.querySelector(".nav-items").classList.toggle("active");
 });
+
 /*Script para Destinos*/
 
 document.addEventListener("DOMContentLoaded", function() {
