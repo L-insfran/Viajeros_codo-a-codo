@@ -1,0 +1,132 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}  
+body {
+ 
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Reddit Mono";
+}
+
+
+ /* login */
+.login-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  width: 100%;
+  background: radial-gradient(circle, rgba(17, 12, 99, 1) 1%, rgba(37, 42, 40, 1) 28%, rgba(57, 66, 54, 1) 44%, rgba(42, 89, 0, 1) 99%);
+  
+}
+.conteiner-content{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 20px 20px;
+  width: 30%;
+  height: 100vh; 
+  border: 3mm ridge rgba(50, 180, 220, 0.6);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+.login-img{
+  
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+}
+.login-img a img {
+  height: 180px;
+  width: 215px;
+}
+
+.content{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content h4{
+  margin-bottom:  10px;
+}
+.content label {
+  margin-top: 10px;
+}
+.content input {
+  width: 80%;
+  border-radius: 30px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  padding: 7px;
+}
+.content span {
+margin-bottom: 10px;
+}
+button {
+  width: 50%;
+  border-radius: 30px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+.content-footer{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-footer span{
+  margin-bottom: 10px;
+}
+.content-footer a{
+  color: white;
+  text-decoration: none;
+}
+
+#user_err {
+  display:none;
+}
+
+#pass_err {
+  display: none;
+}
+
+/* Medias querys */
+@media (width < 576px) {
+
+.conteiner-content {
+  width: 100%;
+   height: 100vh; 
+}
+
+.login-img a img {
+  height: 250px;
+  width: 315px;
+}
+
+.content input {
+  font-size: 16px;
+}
+
+}
+@media screen and (width < 576px) and (height>700px) {
+  
+  .content label {
+    margin-top: 20px;
+  }
+  .content span{
+    margin: 10px 0 10px 0;
+  }
+}
+

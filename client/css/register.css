@@ -1,0 +1,92 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Reddit Mono";
+}
+.register-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, rgba(17, 12, 99, 1) 1%, rgba(37, 42, 40, 1) 28%, rgba(57, 66, 54, 1) 44%, rgba(42, 89, 0, 1) 99%);
+
+}
+.content {
+  width: 60%;
+  text-align: center;
+}
+h2{
+  color: white;
+}
+
+.content input {
+  margin-top: 2px;
+  padding: 7px;
+  border-radius: 25px;
+  width: 14rem;
+}
+
+form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: center;
+}
+
+.content .col{
+  align-self: self-end; 
+  margin-top: 15px;
+}
+.content-footer {
+  width: 63%;
+  text-align-last: justify;
+  align-self: self-end;
+  margin-top: 15px;
+}
+.content-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.content .col5{
+  align-self: self-end;
+}
+button {
+  text-align-last: auto;
+  width: 6rem; 
+  border-radius: 30px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+} 
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (width < 576px) {
+  .content {
+    width: 84%;
+  }
+
+  form {
+    display: inline-flex;  
+    text-align: unset;
+  }
+
+  .content-footer {
+    width: 97%;
+  }
+}

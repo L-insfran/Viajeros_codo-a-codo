@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="shortcut icon" href="/images/logo.ico" />
+  <title>Viajeros-Codo</title>
+</head>
+<body>
+
+  <div class="login-conteiner">
+
+    <div class="conteiner-content">
+
+      <div class="login-img">
+        <a href="#"><img src="/images/logo.png" alt="Logo"></a>
+      </div>
+      <div >
+        <form id="form" class="content" action="">
+          <h4>Bienvenido de nuevo</h4>
+          <p>Iniciar sesion en tu cuenta desde aquí</p>
+          <label for="user">Email</label>
+          <input id="user" type="text" placeholder="Usuario" >
+          <span id="user_err" style="color:red;">USUARIO INCORRECTO</span>
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" placeholder="Password" >
+          <span id="pass_err" style="color:red;">PASSWORD INCORRECTO</span>
+          <span><a href="/pages/error_404.html" style="text-decoration:none;  color:black ">¿olvidaste tu contraseña?</a></span>
+          <button type="submit">Inicar sesión</button>
+        </form>
+      </div>  
+      <div class="content-footer">
+        <span>¿No tenes cuenta?</span>
+        <button><a href="/pages/register.html">Registrarse</a></button>
+      </div>
+      
+
+    </div>
+
+  </div>
+  <script src="/Scripts/login.js"></script>
+</body>
+</html>
