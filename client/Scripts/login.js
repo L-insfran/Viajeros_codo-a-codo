@@ -33,8 +33,6 @@ form.addEventListener('submit',e =>{
       valid.p=true
       return
     }, "2500");
-  }else {
-
   }
   //validamos solo que el pasword sea mayor o igual a 5 caracteres
   if(password.length < 5){
