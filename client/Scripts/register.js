@@ -7,8 +7,8 @@ form.addEventListener('submit',e =>{
   let lastName = document.getElementById('lastname')
   let age = document.getElementById('age')
   let dni = document.getElementById('dni')
-  // let address = document.getElementById('address')
-  // let phone = document.getElementById('phone')
+  let address = document.getElementById('address')
+  let phone = document.getElementById('phone')
   let email = document.getElementById('email')
   let password = document.getElementById('password')
   let re_password = document.getElementById('re_password')
@@ -61,6 +61,7 @@ form.addEventListener('submit',e =>{
   if(age.value ==''){
     age.style.border="3px solid red"
     age.style.background="#FF5E50" 
+    registrar.age=true
   }else{
     age.style.background="#90EE90" 
     age.style.border="3px solid green"
@@ -75,6 +76,7 @@ form.addEventListener('submit',e =>{
   if(dni.value ==''){
     dni.style.border="3px solid red"
     dni.style.background="#FF5E50" 
+    registrar.dni=true
   }else{
     dni.style.background="#90EE90" 
     dni.style.border="3px solid green"
@@ -91,18 +93,21 @@ form.addEventListener('submit',e =>{
   if(!isValid){
     email.style.border="3px solid red"
     email.style.background="#FF5E50" 
+    registrar.email=true
   }else{
 
     email.style.background="#90EE90" 
     email.style.border="3px solid green"
   }
 
-  if(password.value =='' ||re_password.value=='' ){
+  if((password.value =='' || re_password.value=='' ) ||(password.value.length < 5  && re_password.value.length < 5)){
     password.style.border="3px solid red"
     password.style.background="#FF5E50" 
 
     re_password.style.border="3px solid red"
     re_password.style.background="#FF5E50" 
+
+    registrar.pasword=true
   }else{
     if(password.value != re_password.value){
       password.style.border="3px solid red"
@@ -110,6 +115,8 @@ form.addEventListener('submit',e =>{
 
       re_password.style.border="3px solid red"
       re_password.style.background="#FF5E50" 
+      registrar.pasword=true
+      
     }else{
       password.style.background="#90EE90" 
       password.style.border="3px solid green"
@@ -128,9 +135,37 @@ form.addEventListener('submit',e =>{
     console.log('entro hay error apellido ')
     return
   }
-   console.log(2)
+  if(!registrar.age == false){
+    console.log('entro hay error Edad ')
+    return
+  }
+  if(!registrar.dni == false){
+    console.log('entro hay error DNi ')
+    return
+  }
+  if(!registrar.email == false){
+    console.log('entro hay error Email ')
+    return
+  }
+  if(!registrar.pasword == false){
+    console.log('entro hay error pasword ')
+    return
+  }
 
- //continuar con las validaciones para reguistraese al sistema
+  let NewUser = {
+    name: name.value,
+    lastNam:lastName.value,
+    age:age.value,
+    dni:dni.value,
+    address:address.value,
+    phone:phone.value,
+    email:email.value,
+    password:password.value
+  }
+  
+  alert("REgistrar el Usuario",)
+  console.log(NewUser)
+
   
 
 });
@@ -141,14 +176,3 @@ function ValidaCorreo(correo){
   return regexCorreo.test(correo)
 }
 
-
-
-
-//  let registrar = {
-//       'name':false,
-//       'lastName':false,
-//       'age':false,
-//       'dni':false,
-//       'email':false,
-//       'pasword':false
-//   }
