@@ -127,6 +127,7 @@ main{
 
 .filter-content ul li {
     padding: 8px 0; /* Añade un poco de espacio entre cada elemento de la lista */
+    color:#fdf6fd
 }
 
 .filter-content ul ul {
@@ -148,7 +149,7 @@ main{
 }
 
 .category-item:hover {
-    color: #333; /* Cambia el color del texto al pasar sobre las categorías */
+    color: #C5C5C5; /* Cambia el color del texto al pasar sobre las categorías */
 }
 
 /* Estilos para el modal */
