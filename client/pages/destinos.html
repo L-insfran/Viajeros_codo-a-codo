@@ -41,7 +41,6 @@
                             <li class="category-item">Playas</li>
                             <li class="category-item">Montañas</li>
                             <li class="category-item">Ciudades históricas</li>
-                            <li class="category-item">Pueblos pintorescos</li>
                             <li class="category-item">Parques naturales</li>
                         </ul>
                     </li>
@@ -64,18 +63,25 @@
                     <li>Atracciones turísticas:
                         <ul>
                             <li class="category-item">Monumentos famosos</li>
-                            <li class="category-item">Playas paradisíacas</li>
                             <li class="category-item">Sitios arqueológicos</li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </aside>
+         
+        <section class="filter-search">
+            <select id="categorySelect">
+                <option value="" disabled selected>Categorías</option>
+                <option value="naturaleza">Ciudades Históricas</option>
+                <option value="aventura">Montañas</option>
+                <option value="cultura">Playas</option>
+                <option value="gastronomia">Parques Nacionales</option>
+            </select>
+        </section>
         
 
         <div class="main-content">
-            <h1>DESCUBRE NUESTROS DESTINOS</h1>
-        
             <section class="img-galeria">
                 <div class="card-container">
                     <!-- Acá las tarjetas desde JavaScript -->
@@ -83,12 +89,11 @@
             </section>
         </div>
         
-        <!-- Modal inicialmente oculto -->
+
         <div id="modal" class="modal">
             <div class="modal-content">
 
                 <h2>Título del Lugar</h2>
-                <!-- Acá las reseñas  y los iconos  -->
                 <span class="close">&times;</span>
             </div>
         </div>
@@ -98,7 +103,7 @@
 
 
 
-
+    <script src="../data/data.js"></script>
     <script src="../Scripts/scripts.js"></script>
 </body>
 </html>
