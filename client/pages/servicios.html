@@ -26,34 +26,35 @@
         <i class="fas fa-bars" id="menu-toggle"></i>
     </div>
 
-    <section class="services">
-        <div class="service-card">
-            <a href="#alojamiento">
-                <img src="../images/servicios/2.png" alt="Alojamiento">
-                <p>Alojamiento</p>
+    <section class="service-content">
+    <div class="title">
+        <h1> ¡Elije lo que buscas! </h1>
+    </div>
+            
+    <article class="services" >
+        
+        <div class="service-card" id="hotel" >
+            <a href="#vuelos" >
             </a>
         </div>
     
-        <div class="service-card">
-            <a href="#colectivos">
-                <img src="../images/servicios/3.png" alt="Colectivos">
-                <p>Colectivos</p>
+        <div class="service-card" id="colectivo">
+            <a href="#colectivos" >
             </a>
         </div>
-    
-        <div class="service-card">
-            <a href="#vuelos">
-                <img src="../images/servicios/1.png" alt="Vuelos">
-                <p>Vuelos</p>
+
+        <div class="service-card" id="vuelos" >
+            <a href="#avion" >
             </a>
         </div>
+    </article>
     </section>
     
 
     <!-- Sección de Alojamiento -->
-    <section class="acomodation-content" id="alojamiento">
+    <section class="acomodation-content" id="alojamiento" >
         
-        <div class="destination-container">
+        <div class="destination-container" >
             <div class="destination-select">
                 <label for="destination">Destino ideal:</label>
                 <input type="text" id="destination-input" placeholder="Bariloche">
@@ -71,63 +72,71 @@
         </div>    
 
         <div class="carousel-container">
-            <button class="prev">&#9664;</button>
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
             <div class="carousel">
                 <div class="carousel-slide">
-                    <img src="/assets/image.png" alt="Image 1">
+                    <img src="/client/images/servicios/carrusel/1.png" alt="Image 1">
                 </div>
                 <div class="carousel-slide">
-                    <img src="/assets/image.png" alt="Image 2">
+                    <img src="/client/images/servicios/carrusel/2.png" alt="Image 2">
                 </div>
                 <div class="carousel-slide">
-                    <img src="/assets/image.png" alt="Image 3">
+                    <img src="/client/images/servicios/carrusel/3.png" alt="Image 3">
                 </div>
                 <div class="carousel-slide">
-                    <img src="/assets/image.png" alt="Image 4">
+                    <img src="/client/images/servicios/carrusel/4.png" alt="Image 4">
                 </div>
             </div>
-            <button class="next">&#9654;</button>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
     <!-- Sección de Colectivos -->
-    <section class="buses-content">
+    <section class="buses-content" id="colectivos">
         <div class="title-bus">
-            <h2>Compra ahora tus pasajes en colectivo</h2>
+            <h2>Reservá ahora tus pasajes en colectivo</h2>
         </div>
-        <div class="bus-form">
-            <form>
-                <label for="departure">Salida desde:</label>
-                <input type="text" id="departure" name="departure">
-                <label for="destination">Llegada en:</label>
-                <input type="text" id="destination" name="destination">
-                <label for="departure-date">Fecha de salida:</label>
-                <input type="date" id="departure-date" name="departure-date">
-                <label for="return-date">Fecha de llegada:</label>
-                <input type="date" id="return-date" name="return-date">
-                <button type="submit">Buscar</button>
-            </form>
+        <div class="bus-content">
+            <div class="bus-form">
+                <form>
+                    <label for="departure">Salida desde:</label>
+                    <input type="text" id="departure" name="departure">
+                    <label for="destination">Llegada en:</label>
+                    <input type="text" id="destination" name="destination">
+                    <label for="departure-date">Fecha de salida:</label>
+                    <input type="date" id="departure-date" name="departure-date">
+                    <label for="return-date">Fecha de llegada:</label>
+                    <input type="date" id="return-date" name="return-date">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="imagenRuta">
+                <img src="/client/images/servicios/rutas.png">
+            </div>
         </div>
     </section>
 
     <!-- Sección de Vuelos -->
-    <section class="flights-content">
+    <section class="flights-content" id="avion">
         <div class="title-flights"> 
-            <h2>¡O descubre vuelos!</h2>
+            <h2>¡O descubrí vuelos!</h2>
         </div>
-        <div class="fligth-form">
-            <form>
-                <label for="departure">Origen:</label>
-                <input type="text" id="departure" name="departure">
-                <label for="destination">Destino:</label>
-                <input type="text" id="destination" name="destination">
-                <label for="departure-date">Fecha estimada de salida:</label>
-                <input type="date" id="departure-date" name="departure-date">
-                <label for="return-date">Fecha estimada de regreso:</label>
-                <input type="date" id="return-date" name="return-date">
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
+
+
+                <div class="fligth-form">
+                        <form>
+                            <label for="departure">Origen:</label>
+                            <input type="text" id="departure" name="departure">
+                            <label for="destination">Destino:</label>
+                            <input type="text" id="destination" name="destination">
+                            <label for="departure-date">Fecha estimada de salida:</label>
+                            <input type="date" id="departure-date" name="departure-date">
+                            <label for="return-date">Fecha estimada de regreso:</label>
+                            <input type="date" id="return-date" name="return-date">
+                            <button type="submit">Buscar</button>
+                        </form>
+
+            </div>
     </section>
 </body>
 </html>

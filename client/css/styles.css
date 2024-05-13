@@ -233,12 +233,24 @@ main{
 
 
 /*Estilos para la sección Servicios*/
+
+.title{
+    margin-top: 150px;
+    color: #C5C5C5;
+    display: flex;
+    justify-content: center;
+}
+
+.service-content{
+
+}
 .services {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 75vh;
+
 }
 
 a {
@@ -250,48 +262,64 @@ a:hover {
     text-decoration: none;
 }
 
+#colectivo {
+    background-image: url('/client/images/servicios/andesmar-1.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#vuelos {
+    background-image: url('/client/images/servicios/avion-2.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#hotel {
+    background-image: url('/client/images/servicios/hotel-3.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border-radius: 10px;
+    background-position: center bottom;
+}
+
 .service-card a {
     display: block;
     text-align: center;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #393E46;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
+    height: 150px;
+    box-shadow:  1px 1px 2px 1px #C5C5C5;
+    
 }
 
 .service-card a:hover {
-    background-color: #454e59;
-}
-
-.service-card img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
+    background-color: rgba(69, 78, 89, 0.5); 
 }
 
 
 .service-card {
     text-align: center;
+    justify-content: center;
     width: 30%;
+    
 }
 
-.service-card img {
-    width: 100px;
-    height: 100px;
-}
 
-.service-card p {
-    font-size: 18px;
-    margin-top: 10px;
-}
 /*Estilos alojamiento */
 
 
 .acomodation-content{
-    width: 100%;
-    height: 75vh;
+
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/servicios/fondo-servicios.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0;
 }
 
 .destination-container{
@@ -301,7 +329,8 @@ a:hover {
     margin: auto;
     margin-bottom: 30px;
     border-radius: 15px;
-    border-color: 2px solid #454e59;
+    border-color: 1px solid #fff4ff;
+    box-shadow: 0 1px 2px #C5C5C5; 
 }
 .destination-select{
     padding: 10px;
@@ -310,6 +339,8 @@ a:hover {
     align-items: center;
     flex-direction: column;
     color: #C5C5C5;
+    font-weight: bold;
+    
     
 }
 
@@ -318,8 +349,8 @@ a:hover {
     width: 250px;
     height: 20px;
     border-radius: 5px;
-    background-color: #222831;
-    border: 1px solid #454e59;
+    background-color: #C5C5C5;
+    border: 1px solid #F4EEFF;
 }
 
 .accommodation-select {
@@ -327,30 +358,37 @@ a:hover {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    color: #fff4ff;
+    font-weight: bold;
 
 }
 
 .accommodation-buttons {
-    margin-top: 5px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    
 }
 
 .accommodation-button {
-    margin-right: 10px;
-    padding: 5px 10px;
+    margin-right: 30px;
+    width: 150px;
+    padding: 10px 10px;
     border: 1px solid #ccc;
-    background-color: #fff;
-    color: #333;
+    background-color: #8B5FBF;
+    color: #222831;
     cursor: pointer;
+    border-radius: 50px;
 }
 
 .accommodation-button:hover {
-    background-color: #f0f0f0;
+    background-color:#D9ACF5;
 }
 
 
 .carousel-container {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px; /* Aumenta el ancho máximo */
     margin: 0 auto;
 }
 
@@ -362,11 +400,14 @@ a:hover {
 .carousel-slide {
     flex: 0 0 calc(25% - 40px); 
     margin: 20px;
+    width: 250px;
 }
 
 .carousel-slide img {
-    width: 100%;
+    width: 250px;
+    height: auto;
     display: block;
+    margin: 10px; 
 }
 
 .prev,
@@ -374,11 +415,11 @@ a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
+    background:transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: #333;
+    color: #C5C5C5;
     padding: 10px;
 }
 
@@ -390,61 +431,147 @@ a:hover {
     right: -50px;
 }
 
-
-/* Estilos para los formularios */
-form {
-    margin-top: 10px;
-}
-
-form input[type="text"],
-form input[type="date"],
-form button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
-
-/*Estilos para Bus y avion form */
+/* Estilos grales BUS*/
 
 .buses-content{
-    margin-top: 50px;
-    width: 100%;
-    height: 80vh;
+    height: 100vh;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+
+.bus-content{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
     align-items: center;
 }
-.title-flights,
-.title-bus{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+
+.imagenRuta{
+    width: 100px;
+
 }
 
-.fligth-form,
-.bus-form{
-    width: 40%;
-    margin: auto;
+.imagenRuta img{
+    width: 550px;
+    margin: 0;
+    padding: 0;
 }
+
+.title-bus{
+    display: flex;
+    justify-content: center;
+    color: #EEEEEE
+}
+
+.bus-form {
+    width: 300px; 
+    padding: 20px; 
+    border: 1px solid #C5C5C5; 
+    border-radius: 10px; 
+    background-color: #393E46;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+}
+
+.bus-form form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.bus-form label {
+    margin-bottom: 8px; 
+    color: #C5C5C5;
+}
+
+.bus-form input[type="text"],
+.bus-form input[type="date"],
+.bus-form button {
+    padding: 8px; 
+    margin-bottom: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background-color: #C5C5C5;
+}
+
+.bus-form button {
+    background-color: #AC7DD2; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.bus-form button:hover {
+    background-color: #D9ACF5; 
+}
+
+/* Estilos para AVIONES*/
 
 .flights-content{
-    margin-top: 50px;
-    width: 100%;
-    height: 80vh;
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/servicios/fondo-aviones.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0;
+    
 }
 
+.fligth-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
 
+.title-flights{
+    display: flex;
+    justify-content: center;
+    color: #EEEEEE
+}
+
+.fligth-form {
+    width: 300px; 
+    margin: 0 auto;
+    padding: 20px; 
+    border: 1px solid #C5C5C5; 
+    border-radius: 10px; 
+    background-color: #393E46;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+}
+
+.fligth-form form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.fligth-form  label {
+    margin-bottom: 8px; 
+    color: #C5C5C5;
+}
+
+.fligth-form  input[type="text"],
+.fligth-form  input[type="date"],
+.fligth-form  button {
+    padding: 8px; 
+    margin-bottom: 16px; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+    background-color: #C5C5C5;
+}
+
+.fligth-form  button {
+    background-color: #AC7DD2; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+}
+
+.fligth-form  button:hover {
+    background-color: #D9ACF5; 
+}
 
 
 /* Estilos para pantallas más pequeñas */
