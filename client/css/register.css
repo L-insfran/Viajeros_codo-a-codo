@@ -1,15 +1,11 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 body {
-  margin: 0;
+margin: 0;
   padding: 0;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-family: "Reddit Mono";
+  font-family: "Poppins", sans-serif;
+  background-color: #222831;
 }
 .register-conteiner {
   display: flex;
@@ -17,15 +13,13 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background: radial-gradient(circle, rgba(17, 12, 99, 1) 1%, rgba(37, 42, 40, 1) 28%, rgba(57, 66, 54, 1) 44%, rgba(42, 89, 0, 1) 99%);
-
 }
 .content {
   width: 60%;
   text-align: center;
 }
 h2{
-  color: white;
+  color: #C5C5C5;
 }
 
 .content input {
@@ -67,13 +61,13 @@ button {
   border-radius: 30px;
   padding: 8px;
   cursor: pointer;
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: #8B5FBF;
+  color: white;
   border: none;
 } 
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #AC7DD2;
 }
 
 @media (width < 576px) {
