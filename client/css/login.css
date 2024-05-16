@@ -37,6 +37,7 @@ body {
   align-items: center;
 }
 .login-img a img {
+  margin-top: 20px;
   height: 180px;
   width: 215px;
 }
