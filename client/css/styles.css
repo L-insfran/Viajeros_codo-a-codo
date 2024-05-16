@@ -442,7 +442,7 @@ a:hover {
 
 .bus-content{
     display: flex;
-    width: 800px;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
 }
@@ -667,6 +667,56 @@ a:hover {
         color: #222831;
     }
     
+
+/* Media query para SERVICIOS */
+    .services {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .service-card {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .service-card a {
+        height: 100px; 
+    }
+
+    .buses-content{
+        margin: 0px;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .bus-content {
+        flex-direction: column; 
+        align-items: center; 
+
+    }
+
+    .imagenRuta{
+        display: none;
+    }
+
+
+    .accommodation-select{
+        display: none;
+    }
+    .carousel-slide {
+        flex: 0 0 calc(50% - 40px); /* Reduce el ancho de cada slide para que quepan dos en una fila */
+        margin: 10px; /* Reduzca el margen entre los slides */
+        width: auto; /* Ancho automático para adaptarse al tamaño de la pantalla */
+    }
+
+    .prev,
+    .next {
+        display: none;
+    }
+
 }
+
 
 
