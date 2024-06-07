@@ -1,13 +1,13 @@
-
+require('dotenv').config()
 const express = require('express')
 const path = require('path')
-const routes = require('./src/routes/index.routes')
+const routes = require('./src/routes/routes')
 
 const app = express()
 
 
 app.use(routes)
-
+/* En caso de no encontrar la ruta envia una pagina 404 */
 //Static Files
 app.use(express.static(path.join(__dirname,'./public')))
 
