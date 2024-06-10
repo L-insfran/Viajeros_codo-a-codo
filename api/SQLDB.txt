@@ -4,40 +4,19 @@ CREATE DATABASE IF NOT EXISTS viajeros;
 
 USE viajeros;
 
-CREATE TABLE bookings(
-	id_booking int PRIMARY key AUTO_INCREMENT,
+CREATE TABLE hospedaje(
+	id_hostel int PRIMARY key AUTO_INCREMENT,
     name varchar(50) NOT null
 );
 
-CREATE TABLE service(
+CREATE TABLE servicio(
 	id_service int PRIMARY KEY AUTO_INCREMENT,
     name varchar(50) NOT null,
-    id_booking int ,
-    FOREIGN KEY(id_booking) REFERENCES bookings(id_booking)
+    Id_hostel int ,
+    FOREIGN KEY(Id_hostel) REFERENCES hospedaje(id_hostel)
 );
 
-CREATE TABLE people(
-	dni int(8) PRIMARY key,
-    name varchar(25) NOT null,
-DROP DATABASE IF EXISTS viajeros;
-
-CREATE DATABASE IF NOT EXISTS viajeros;
-
-USE viajeros;
-
-CREATE TABLE bookings(
-	id_booking int PRIMARY key AUTO_INCREMENT,
-    name varchar(50) NOT null
-);
-
-CREATE TABLE service(
-	id_service int PRIMARY KEY AUTO_INCREMENT,
-    name varchar(50) NOT null,
-    id_booking int ,
-    FOREIGN KEY(id_booking) REFERENCES bookings(id_booking)
-);
-
-CREATE TABLE people(
+CREATE TABLE cliente(
 	dni int(8) PRIMARY key,
     name varchar(25) NOT null,
     lasname varchar(16),
@@ -50,32 +29,32 @@ CREATE TABLE login(
 	email varchar(60) PRIMARY KEY,
     password varchar(50),
     id_dni int(8),
-    FOREIGN KEY(id_dni) REFERENCES people(dni)
+    FOREIGN KEY(id_dni) REFERENCES cliente(dni)
 );
 
-CREATE TABLE type_destination(
-	id_type int PRIMARY key AUTO_INCREMENT,
+CREATE TABLE tipo_destino(
+	id_tipo int PRIMARY key AUTO_INCREMENT,
     name varchar(30) NOT null
 );
 
-CREATE TABLE destination(
-	id_destination int PRIMARY key AUTO_INCREMENT,
+CREATE TABLE destino(
+	id_destino int PRIMARY key AUTO_INCREMENT,
     name varchar(35) NOT null,
     province varchar(40),
     description varchar(75),
     imagen_url varchar(80),
-    id_type_destination int,
-    FOREIGN KEY(id_type_destination) REFERENCES type_destination(id_type)
+    id_tipo_destino int,
+    FOREIGN KEY(id_tipo_destino) REFERENCES tipo_destino(id_tipo)
 );
 
-CREATE TABLE travel_log(
-	id_destination int,
+CREATE TABLE registro(
+	id_destino int,
     id_mail varchar(60),
     id_service int,
     date_coming date NOT null,
-    date_finish date,
+    date_finish date NOT null,
     price decimal(10,2), 
-    FOREIGN KEY(id_destination) REFERENCES destination(id_destination),
+    FOREIGN KEY(id_destino) REFERENCES destino(id_destino),
     FOREIGN KEY(id_mail) REFERENCES login(email),
-    FOREIGN KEY( id_service) REFERENCES service(id_service)
+    FOREIGN KEY( id_service) REFERENCES servicio(id_service)
 );
