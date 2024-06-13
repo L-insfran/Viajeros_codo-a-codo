@@ -1,19 +1,13 @@
- require('dotenv').config()
-let mysql = require('mysql')
 
-let conexion = mysql.createConnection({
+require('dotenv').config();
+const mysql = require('mysql2/promise');
+
+const conexion = mysql.createPool({
   host: process.env.HOST,
   database: process.env.DATABASE,
   user: process.env.USER,
-  password:process.env.PASSWORD
-})
+  password: process.env.PASSWORD
+});
 
-conexion.connect(function(err){
-  if(err){
-    throw err.stack
-  }else{
-    console.log('base conectada')
-  }
-})
+module.exports = conexion;
 
-conexion.end();

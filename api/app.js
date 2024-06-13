@@ -5,8 +5,15 @@ const routes = require('./src/routes/routes')
 
 const app = express()
 
+// Middleware para manejar datos JSON
+app.use(express.json());
+
+// Middleware para manejar datos codificados en URL (formularios HTML)
+app.use(express.urlencoded({ extended: true }));
 
 app.use(routes)
+
+
 /* En caso de no encontrar la ruta envia una pagina 404 */
 //Static Files
 app.use(express.static(path.join(__dirname,'./public')))
