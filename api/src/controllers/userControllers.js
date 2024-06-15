@@ -1,11 +1,17 @@
-const userController = {}
+const userController = {};
 const conexion = require('../database/connection.js');
 
-userController.index = (req, res)=>{
+userController.index = async (req, res) => {
+  try {
+    const query = 'SELECT * FROM usuario';
+    const [rows] = await conexion.query(query);
 
-  res.send('la conexion ha sido correcta desde el controlador')
-
-}
+    res.status(200).json(rows); // Devuelve todos los usuarios en formato JSON
+  } catch (err) {
+    console.error('ERROR_USER-CONTROLLER.INDEX', err);
+    res.status(500).send('Se ha generado un error al obtener los usuarios');
+  }
+};
 
 userController.store = async (req, res) => {
   const { nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico } = req.body;
