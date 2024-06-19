@@ -232,491 +232,106 @@ main{
 }
 
 
-/*Estilos para la sección Servicios*/
+/*Estilos para FORMULARIO AÑADIR DESTINO */
 
-.title{
-    margin-top: 150px;
-    color: #C5C5C5;
-    display: flex;
-    justify-content: center;
-}
-
-.service-content{
-
-}
-.services {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 75vh;
-
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-#colectivo {
-    background-image: url('/client/images/servicios/andesmar-1.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;
-    border-radius: 10px;
-}
-
-#vuelos {
-    background-image: url('/client/images/servicios/avion-2.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;
-    border-radius: 10px;
-}
-
-#hotel {
-    background-image: url('/client/images/servicios/hotel-3.jpg');
-    background-repeat: no-repeat; 
-    background-size: cover;
-    border-radius: 10px;
-    background-position: center bottom;
-}
-
-.service-card a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    height: 150px;
-    box-shadow:  1px 1px 2px 1px #C5C5C5;
-    
-}
-
-.service-card a:hover {
-    background-color: rgba(69, 78, 89, 0.5); 
-}
-
-
-.service-card {
-    text-align: center;
-    justify-content: center;
-    width: 30%;
-    
-}
-
-
-/*Estilos alojamiento */
-
-
-.acomodation-content{
-
-    background-image: linear-gradient(
-        rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/servicios/fondo-servicios.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        padding: 100px 0;
-}
-
-.destination-container{
-    background-color: #393E46;
-    width: 300px;
-    height: 100px;
-    margin: auto;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    border-color: 1px solid #fff4ff;
-    box-shadow: 0 1px 2px #C5C5C5; 
-}
-.destination-select{
-    padding: 10px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #C5C5C5;
-    font-weight: bold;
-    
-    
-}
-
-.destination-select input{
-    margin-top: 20px;
-    width: 250px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: #C5C5C5;
-    border: 1px solid #F4EEFF;
-}
-
-.accommodation-select {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
-    color: #fff4ff;
-    font-weight: bold;
-
-}
-
-.accommodation-buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-.accommodation-button {
-    margin-right: 30px;
-    width: 150px;
-    padding: 10px 10px;
-    border: 1px solid #ccc;
-    background-color: #8B5FBF;
-    color: #222831;
-    cursor: pointer;
-    border-radius: 50px;
-}
-
-.accommodation-button:hover {
-    background-color:#D9ACF5;
-}
-
-
-.carousel-container {
-    position: relative;
-    max-width: 1000px; /* Aumenta el ancho máximo */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 50px;
     margin: 0 auto;
-}
-
-.carousel {
-    display: flex;
-    overflow-x: hidden;
-}
-
-.carousel-slide {
-    flex: 0 0 calc(25% - 40px); 
-    margin: 20px;
-    width: 250px;
-}
-
-.carousel-slide img {
-    width: 250px;
-    height: auto;
-    display: block;
-    margin: 10px; 
-}
-
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background:transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #C5C5C5;
-    padding: 10px;
-}
-
-.prev {
-    left: -50px;
-}
-
-.next {
-    right: -50px;
-}
-
-/* Estilos grales BUS*/
-
-.buses-content{
-    height: 100vh;
+    background-color: #393E46;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 100px;
-    margin-bottom: 100px;
-    
 }
 
-.bus-content{
-    display: flex;
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilos específicos para los campos de entrada de texto */
+.form-group input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos específicos para el campo de descripción */
+.form-group textarea {
+    width: 95%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* Estilos específicos para el select de categoría */
+.form-group select {
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.imagenRuta{
-    width: 100px;
-
+/* Ajustes específicos para el botón */
+.form-group button {
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #AC7DD2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.imagenRuta img{
-    width: 550px;
-    margin: 0;
-    padding: 0;
+.form-group button:hover {
+    background-color: #8C5DB2;
 }
 
-.title-bus{
+/* Ajustes específicos para la fila de formulario */
+.form-row {
     display: flex;
-    justify-content: center;
-    color: #EEEEEE
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.bus-form {
-    width: 300px; 
-    padding: 20px; 
-    border: 1px solid #C5C5C5; 
-    border-radius: 10px; 
-    background-color: #393E46;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   
-}
-
-.bus-form form {
-    display: flex; 
-    flex-direction: column; 
-}
-
-.bus-form label {
-    margin-bottom: 8px; 
-    color: #C5C5C5;
-}
-
-.bus-form input[type="text"],
-.bus-form input[type="date"],
-.bus-form button {
-    padding: 8px; 
-    margin-bottom: 16px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    background-color: #C5C5C5;
-}
-
-.bus-form button {
-    background-color: #AC7DD2; 
-    color: #fff; 
-    border: none; 
-    cursor: pointer; 
-}
-
-.bus-form button:hover {
-    background-color: #D9ACF5; 
-}
-
-/* Estilos para AVIONES*/
-
-.flights-content{
-    background-image: linear-gradient(
-        rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/servicios/fondo-aviones.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        padding: 100px 0;
-    
-}
-
-.fligth-container{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.title-flights{
-    display: flex;
-    justify-content: center;
-    color: #EEEEEE
-}
-
-.fligth-form {
-    width: 300px; 
+/* Ajustes específicos para los elementos pequeños */
+.form-row .form-group.small {
+    flex: 0 0 calc(50% - 10px);
     margin: 0 auto;
-    padding: 20px; 
-    border: 1px solid #C5C5C5; 
-    border-radius: 10px; 
-    background-color: #393E46;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   
 }
 
-.fligth-form form {
-    display: flex; 
-    flex-direction: column; 
+/* Ajustes específicos para el select de categoría */
+.form-group.full-width {
+    flex: 1 1 100%;
 }
 
-.fligth-form  label {
-    margin-bottom: 8px; 
-    color: #C5C5C5;
-}
-
-.fligth-form  input[type="text"],
-.fligth-form  input[type="date"],
-.fligth-form  button {
-    padding: 8px; 
-    margin-bottom: 16px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    background-color: #C5C5C5;
-}
-
-.fligth-form  button {
-    background-color: #AC7DD2; 
-    color: #fff; 
-    border: none; 
-    cursor: pointer; 
-}
-
-.fligth-form  button:hover {
-    background-color: #D9ACF5; 
-}
-
-
-/* Estilos para pantallas más pequeñas */
-
-
-@media screen and (max-width: 1000px) {
-    
-    
-/*Navegador*/ 
-    #menu-toggle {
-        display: inline;
-        margin-right: 20px;
-    }
-    
-    .nav-items ul {
-        position: absolute;
-        width: 200px;
-        top: 100%; /* Alinea el menú abajo del icono */
-        left: 50%; /* Coloca el menú en el centro horizontalmente */
-        transform: translateX(-50%); /* Centra el menú horizontalmente */
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        z-index: 1000;
-        display: none;
-    }
-    
-    
-    .nav-items i {
-        width: 10px;
-    }
-    .nav-items.active ul {
-        display: block;
-    }
-    .nav-items {
-        position: relative;
-    }
-    .nav-items ul li {
-        margin-bottom: 10px;
-    }
-
-    .nav-items a:hover,
-    .nav-items a:hover i {
-        color: grey !important; 
-    }
-
-
-
-
-    /*Destinos*/
-
-    main{
-        display: flex;
+@media (max-width: 768px) {
+    .form-row {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
-    .card-container{
-        margin-top: 0px;
+    .form-group.small {
+        flex: 1 0 100%;
+        margin: 0;
     }
-
-    .filter-content{
-        display: none;
-    }
-
-
-    .filter-search{
-        margin-top: 120px;
-        display: block;
-        position: relative;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .filter-search select {
-        width: 250px;
-        height: 50px;
-        padding: 5px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 40px;
-        background-color: #393E46;
-        color: #C5C5C5;
-
-    }
-
-    .filter-search select option {
-        padding: 10px;
-        width: 100px;
-        cursor: pointer;
-        color: #222831;
-    }
-    
-
-/* Media query para SERVICIOS */
-    .services {
-        flex-wrap: wrap;
-        height: auto;
-    }
-
-    .service-card {
-        width: 250px;
-        margin-bottom: 20px;
-    }
-
-    .service-card a {
-        height: 100px; 
-    }
-
-    .buses-content{
-        margin: 0px;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .bus-content {
-        flex-direction: column; 
-        align-items: center; 
-
-    }
-
-    .imagenRuta{
-        display: none;
-    }
-
-
-    .accommodation-select{
-        display: none;
-    }
-    .carousel-slide {
-        flex: 0 0 calc(50% - 40px); /* Reduce el ancho de cada slide para que quepan dos en una fila */
-        margin: 10px; /* Reduzca el margen entre los slides */
-        width: auto; /* Ancho automático para adaptarse al tamaño de la pantalla */
-    }
-
-    .prev,
-    .next {
-        display: none;
-    }
-
 }
-
-
-
