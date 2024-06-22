@@ -87,3 +87,59 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//Acá va la logica del form AÑDIR DESTINOS
+
+document.getElementById('destinationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+
+    const destination = {
+        name: formData.get('name'),
+        description: formData.get('description'),
+        categoryId: formData.get('category'),
+        provinceId: formData.get('province'),
+        image: formData.get('image')
+    };
+
+    console.log('Destino agregado:', destination);
+    // DE acá los mandamos al back normalmente
+    // fetch('/api/destinations', {
+    //     method: 'POST',
+    //     body: formData,
+    // }).then(response => response.json()).then(data => {
+    //     console.log(data);
+    // }).catch(error => {
+    //     console.error('Error:', error);
+    // });
+});
+
+const categoriesSelect = document.getElementById('categories');
+const selectedCategoriesDiv = document.getElementById('selectedCategories');
+const selectedCategories = [];
+
+categoriesSelect.addEventListener('change', (event) => {
+    const options = event.target.options;
+    selectedCategoriesDiv.innerHTML = '';
+    selectedCategories.length = 0;
+    for (let option of options) {
+        if (option.selected) {
+            selectedCategories.push(option.value);
+            const categoryItem = document.createElement('div');
+            categoryItem.classList.add('category-item');
+            categoryItem.textContent = option.text;
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Eliminar';
+            removeButton.addEventListener('click', () => {
+                const index = selectedCategories.indexOf(option.value);
+                if (index > -1) {
+                    selectedCategories.splice(index, 1);
+                    option.selected = false;
+                    categoryItem.remove();
+                }
+            });
+            categoryItem.appendChild(removeButton);
+            selectedCategoriesDiv.appendChild(categoryItem);
+        }
+    }
+});

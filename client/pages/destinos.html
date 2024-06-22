@@ -30,9 +30,55 @@
         </div>
     </header>
 
+        <!-- Formulario p agregar DESTINOS -->
+        <div class="container">
+            <h1 class="title">Agregar Destino</h1>
+            <form id="destinationForm">
+                <div class="form-row">
+                    <div class="form-group small centered">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group small centered">
+                        <label for="province">ID Provincia</label>
+                        <select id="province" name="province" required>
+                            <option value="">Selecciona una provincia</option>
+                            <option value="1">Buenos Aires</option>
+                            <option value="2">Córdoba</option>
+                            <option value="3">Mendoza</option>
+                            <!-- Agrega más provincias según sea necesario -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="categories">ID Categorías</label>
+                    <select id="categories" name="categories" multiple required>
+                        <option value="1">Montaña</option>
+                        <option value="2">Playa</option>
+                        <option value="3">Ciudad</option>
+                        <!-- Agrega más categorías según sea necesario -->
+                    </select>
+                    <div id="selectedCategories"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="description">Descripción</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
+                    <div class="form-group small centered">
+                        <label for="image">Añadir Imagen</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="form-group centered">
+                    <button type="submit">Agregar Destino</button>
+                </div>
+            </form>
+        </div>
         
+     <!-- Página que ven los usuarios -->
     <main>
-        <aside>
+         <aside>
             <div class="filter-content">
                 <h2 class="filter-heading">Explora por Categoría</h2>
                 <ul>
