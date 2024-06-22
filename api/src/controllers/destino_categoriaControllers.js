@@ -13,7 +13,7 @@ destinoCategoriaController.store = async (req, res) =>{
   try {
 
     const query =`
-      INSERT INTO destinos_categorias (id_destino, id_categoria) VALUES (?,?)
+      INSERT INTO Destinos_Categorias (id_destino, id_categoria) VALUES (?,?)
     `;
     const values = [id_destino, id_categoria]
 

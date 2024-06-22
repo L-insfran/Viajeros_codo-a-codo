@@ -24,10 +24,10 @@ destinoController.index = async (req, res) => {
         GROUP_CONCAT(c.id_categoria) AS categorias_ids,
         GROUP_CONCAT(c.nombre_categoria) AS categorias_nombres
       FROM 
-        destinos d
+        Destinos d
         LEFT JOIN provincia p ON d.id_provincia = p.id_provincia
-        LEFT JOIN destinos_categorias dc ON d.id_destino = dc.id_destino
-        LEFT JOIN categorias c ON dc.id_categoria = c.id_categoria
+        LEFT JOIN Destinos_Categorias dc ON d.id_destino = dc.id_destino
+        LEFT JOIN Categorias c ON dc.id_categoria = c.id_categoria
       GROUP BY 
         d.id_destino, 
         p.id_provincia, 
@@ -54,7 +54,7 @@ destinoController.store = async (req, res) => {
 
   try {
     const query = `
-      INSERT INTO destinos (name_destino,descripcion, id_provincia) 
+      INSERT INTO Destinos (name_destino,descripcion, id_provincia) 
       VALUES (?,?,?)
     `;
     const values = [name_destino, descripcion, id_provincia];
@@ -88,7 +88,7 @@ destinoController.show = async (req, res) => {
 
   try {
     const query = `
-      SELECT * FROM destinos 
+      SELECT * FROM Destinos 
       WHERE id_destino = ?
     `;
     const values = [id_destino];
@@ -127,7 +127,7 @@ destinoController.update = async (req, res) => {
 
     try {
       const updateQuery = `
-        UPDATE destinos 
+        UPDATE Destinos 
         SET 
           name_destino = COALESCE(?, name_destino),
           descripcion = COALESCE(?, descripcion),
@@ -144,7 +144,7 @@ destinoController.update = async (req, res) => {
 
       // Recuperar la información actualizada del destino "Mejorar esta consutla"
       const selectQuery = `
-        SELECT * FROM destinos
+        SELECT * FROM Destinos
         WHERE id_destino = ?
       `;
       const [selectResult] = await conexion.query(selectQuery, [id_destino]);
@@ -167,7 +167,7 @@ destinoController.delete = async (req, res) => {
   try {
     // Primero, recuperar la información la categoria
     const selectQuery = `
-      SELECT * FROM destinos 
+      SELECT * FROM Destinos 
       WHERE id_destino = ?
     `;
     const selectValues = [id_destino];
@@ -181,7 +181,7 @@ destinoController.delete = async (req, res) => {
 
     // Luego, eliminar el usuario
     const deleteQuery = `
-      DELETE FROM destinos
+      DELETE FROM Destinos
       WHERE id_destino = ?
     `;
     const deleteValues = [id_destino];

@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS viajeros;
+DROP DATABASE IF EXISTS leansins_viajeros;
 
-CREATE DATABASE IF NOT EXISTS viajeros;
+CREATE DATABASE IF NOT EXISTS leansins_viajeros;
 
-USE viajeros;
+USE leansins_viajeros;
 
 -- Tabla: provincia
 CREATE TABLE provincia (

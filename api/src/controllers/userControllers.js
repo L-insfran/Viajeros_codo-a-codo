@@ -3,13 +3,13 @@ const conexion = require('../database/connection.js');
 
 userController.index = async (req, res) => {
   try {
-    const query = 'SELECT * FROM usuario';
+    const query = 'SELECT * FROM Usuario';
     const [rows] = await conexion.query(query);
 
     res.status(200).json(rows); // Devuelve todos los usuarios en formato JSON
   } catch (err) {
     console.error('ERROR_USER-CONTROLLER.INDEX', err);
-    res.status(500).send('Se ha generado un error al obtener los usuarios');
+    res.status(500).send('Se ha generado un error al obtener los Usuarios');
   }
 };
 
@@ -23,7 +23,7 @@ userController.store = async (req, res) => {
 
   try {
     const query = `
-      INSERT INTO usuario (nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico, rol) 
+      INSERT INTO Usuario (nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico, rol) 
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
     const values = [nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico, false];
@@ -63,7 +63,7 @@ userController.delete = async (req, res) => {
   try {
     // Primero, recuperar la información del usuario
     const selectQuery = `
-      SELECT * FROM usuario 
+      SELECT * FROM Usuario 
       WHERE id_usuario = ?
     `;
     const selectValues = [id_usuario];
@@ -77,7 +77,7 @@ userController.delete = async (req, res) => {
 
     // Luego, eliminar el usuario
     const deleteQuery = `
-      DELETE FROM usuario 
+      DELETE FROM Usuario 
       WHERE id_usuario = ?
     `;
     const deleteValues = [id_usuario];
@@ -104,7 +104,7 @@ userController.show = async (req, res) => {
 
   try {
     const query = `
-      SELECT * FROM usuario 
+      SELECT * FROM Usuario 
       WHERE id_usuario = ?
     `;
     const values = [id_usuario];
@@ -143,7 +143,7 @@ userController.update = async (req, res) => {
 
   try {
     const updateQuery = `
-      UPDATE usuario 
+      UPDATE Usuario 
       SET 
         nombre = COALESCE(?, nombre),
         apellido = COALESCE(?, apellido),
@@ -164,7 +164,7 @@ userController.update = async (req, res) => {
 
     // Recuperar la información actualizada del usuario
     const selectQuery = `
-      SELECT * FROM usuario 
+      SELECT * FROM Usuario 
       WHERE id_usuario = ?
     `;
     const [selectResult] = await conexion.query(selectQuery, [id_usuario]);

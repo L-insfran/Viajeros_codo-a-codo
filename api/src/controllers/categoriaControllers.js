@@ -3,13 +3,13 @@ const conexion = require('../database/connection.js');
 
 categoriaController.index = async (req, res) => {
   try {
-    const query = 'SELECT * FROM categorias';
+    const query = 'SELECT * FROM Categorias';
     const [rows] = await conexion.query(query);
 
     res.status(200).json(rows); // Devuelve todos los usuarios en formato JSON
   } catch (err) {
     console.error('ERROR_CATEGORIA-CONTROLLER.INDEX', err);
-    res.status(500).send('Se ha generado un error al obtener las categorias');
+    res.status(500).send('Se ha generado un error al obtener las Categorias');
   }
 }
 
@@ -24,7 +24,7 @@ categoriaController.store = async (req, res) => {
 
   try {
     const query = `
-      INSERT INTO categorias (nombre_categoria) 
+      INSERT INTO Categorias (nombre_categoria) 
       VALUES (?)
     `;
     const values = [nombre_categoria];
@@ -56,7 +56,7 @@ categoriaController.show = async (req, res) => {
 
   try {
     const query = `
-      SELECT * FROM categorias 
+      SELECT * FROM Categorias 
       WHERE id_categoria = ?
     `;
     const values = [id_categoria];
@@ -91,7 +91,7 @@ categoriaController.update = async (req, res) => {
 
   try {
     const updateQuery = `
-      UPDATE categorias 
+      UPDATE Categorias 
       SET 
         nombre_categoria = COALESCE(?, nombre_categoria)
       WHERE id_categoria = ?
@@ -106,7 +106,7 @@ categoriaController.update = async (req, res) => {
 
     // Recuperar la información actualizada de la categoria
     const selectQuery = `
-      SELECT * FROM categorias
+      SELECT * FROM Categorias
       WHERE id_categoria = ?
     `;
     const [selectResult] = await conexion.query(selectQuery, [id_categoria]);
@@ -129,7 +129,7 @@ categoriaController.delete = async (req, res) => {
   try {
     // Primero, recuperar la información la categoria
     const selectQuery = `
-      SELECT * FROM categorias 
+      SELECT * FROM Categorias 
       WHERE id_categoria = ?
     `;
     const selectValues = [id_categoria];
@@ -143,7 +143,7 @@ categoriaController.delete = async (req, res) => {
 
     // Luego, eliminar el usuario
     const deleteQuery = `
-      DELETE FROM categorias
+      DELETE FROM Categorias
       WHERE id_categoria = ?
     `;
     const deleteValues = [id_categoria];
