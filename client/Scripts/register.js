@@ -67,7 +67,7 @@ form.addEventListener('submit',e =>{
     age.style.border="3px solid green"
   }
 
-  dni.addEventListener("blur", function() {
+/*   dni.addEventListener("blur", function() {
     if(dni.value !==''){
       dni.style.background="#90EE90" 
       dni.style.border="3px solid green" 
@@ -80,7 +80,7 @@ form.addEventListener('submit',e =>{
   }else{
     dni.style.background="#90EE90" 
     dni.style.border="3px solid green"
-  }
+  } */
 
   email.addEventListener("blur", function(){
     let validaCorreo = ValidaCorreo(email.value)
@@ -155,8 +155,7 @@ form.addEventListener('submit',e =>{
   let NewUser = {
     name: name.value,
     lastNam:lastName.value,
-    age:age.value,
-    dni:dni.value,
+    age:age.value,  
     address:address.value,
     phone:phone.value,
     email:email.value,
