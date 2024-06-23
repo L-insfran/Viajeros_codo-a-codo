@@ -1,10 +1,12 @@
 require('dotenv').config()
 const express = require('express')
 const path = require('path')
+const cors = require('cors');
 const routes = require('./src/routes/routes')
 
 const app = express()
 
+app.use(cors()); // Esto permite todas las solicitudes de origen
 // Middleware para manejar datos JSON
 app.use(express.json());
 

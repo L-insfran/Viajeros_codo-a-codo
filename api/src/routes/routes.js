@@ -6,6 +6,13 @@ const destinoController = require('../controllers/destinosControllers.js')
 const destinoCategoriaController = require('../controllers/destino_categoriaControllers.js')
 const router = express.Router()
 
+
+// Ruta de inicio
+router.get('/', (req, res) => {
+  res.send('¡Bienvenido a mi aplicación Express!');
+});
+
+
 //Rutas CRUD USUARIO
 router.get('/usuarioList', userController.index)
 router.get('/usuario/:id_usuario', userController.show)

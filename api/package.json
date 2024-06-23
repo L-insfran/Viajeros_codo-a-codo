@@ -4,11 +4,14 @@
   "description": "App para reserva de viajes",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "codoAcodo_Grupo20",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql": "^2.18.1",

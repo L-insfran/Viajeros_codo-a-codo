@@ -1,5 +1,6 @@
 const userController = {};
 const conexion = require('../database/connection.js');
+const bcrypt = require('bcryptjs');
 
 userController.index = async (req, res) => {
   try {
@@ -14,21 +15,36 @@ userController.index = async (req, res) => {
 };
 
 userController.store = async (req, res) => {
-  const { nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico } = req.body;
+  const { nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico,password } = req.body;
 
    // Validar que todos los campos estén presentes
-  if (!nombre || !apellido || !fecha_nacimiento || !domicilio_ciudad || !domicilio_departamento || !telefono || !correo_electronico) {
+  if (!nombre || !apellido || !fecha_nacimiento || !domicilio_ciudad || !domicilio_departamento || !telefono || !correo_electronico || !password) {
     return res.status(400).json({ error: 'Todos los campos son obligatorios.' });
   }
 
+  const connection = await conexion.getConnection(); // Obtener una conexión
+  await connection.beginTransaction(); // Iniciar una transacción
+
   try {
+     const hashedPassword = await bcrypt.hash(password, 10); // Hashear la contraseña con un salt de 10 rondas
     const query = `
       INSERT INTO Usuario (nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico, rol) 
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
     const values = [nombre, apellido, fecha_nacimiento, domicilio_ciudad, domicilio_departamento, telefono, correo_electronico, false];
 
-    const [result] =  await conexion.query(query, values);
+    const [result] =  await connection.query(query, values);
+    const userId = result.insertId; // Obtener el ID del usuario insertado
+
+    const query2 = `
+      INSERT INTO Login (usuario, contrasenia, id_usuario) 
+      VALUES (?, ?, ?)
+    `;
+    const values2 = [correo_electronico, hashedPassword, userId];
+
+    await connection.query(query2, values2);
+
+    await connection.commit(); // Confirmar la transacción
 
     const response = {
       message: 'Usuario creado con éxito',
@@ -45,10 +61,14 @@ userController.store = async (req, res) => {
       }
     };
 
+
     res.status(200).json(response); // Envía los datos como 
   } catch (err) {
-    console.error('ERROR_USER-CONTROLLER.STORE',err);
-    res.status(500).send('Se ha generado un error al registrar al usuario');
+      await connection.rollback(); // Revertir la transacción en caso de error
+      console.error('ERROR_USER-CONTROLLER.STORE',err);
+      res.status(500).send('Se ha generado un error al registrar al usuario');
+  } finally {
+    connection.release(); // Liberar la conexión
   }
 }
 
