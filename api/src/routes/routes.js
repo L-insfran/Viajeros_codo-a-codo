@@ -4,6 +4,8 @@ const provinciaController = require('../controllers/provinciaControllers.js')
 const categoriaController = require('../controllers/categoriaControllers.js')
 const destinoController = require('../controllers/destinosControllers.js')
 const destinoCategoriaController = require('../controllers/destino_categoriaControllers.js')
+const authController  = require('../controllers/authController.js')
+
 const router = express.Router()
 
 
@@ -19,6 +21,9 @@ router.get('/usuario/:id_usuario', userController.show)
 router.put('/usuario/:id_usuario', userController.update)
 router.delete('/usuario/:id_usuario', userController.delete)
 router.post('/usuario', userController.store)
+
+//Ruta Login
+router.post('/login', authController.login)
 
 //Rutas CRUD Provincia
 router.get('/provinciaList',provinciaController.index)
